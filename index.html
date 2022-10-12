@@ -19,33 +19,54 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
-    <title>XXX</title>
+    <title>User Input, with Js</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">XXX</span>
+          <span class="mdl-layout-title">User Input, with JS</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="page-content" style="padding-left: 100px">
-          Click the button.
-        </div>
-        <!-- Colored raised button -->
+        <h3>Please enter the following:</h3>
+        <!-- Simple Textfield -->
+        <form action="#">
+          <p>First Name</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="first-name">
+            <label class="mdl-textfield__label" for="first-name">Name here ...</label>
+          </div>
+        </form>
+         <!-- Numeric Textfield -->
+         <form action="#">
+          <p>Age</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age-entered">
+            <label class="mdl-textfield__label" for="age-entered">Age here ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <!-- Raised button with ripple -->
         <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-          onclick="myButtonClicked()"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="enterClicked()"
         >
-          XXX
+          Enter
         </button>
+        <br>
+        <br>
+        <br>
+        <div id="user-info">
+          <div id="address"></div>
+        </div>
         <img
           src="./images/smashing_pumpkins.jpeg"
           alt="Smashing_pumpkins"
           id="right-image"
         />
-        <br />
       </main>
     </div>
   </body>
